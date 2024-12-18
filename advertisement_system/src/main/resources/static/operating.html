@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>广告主操作</title>
+</head>
+<body>
+<h1 id="welcome-message"></h1>
+<div class="return-button">
+  <input type="button" value="返回登录" onclick="location.href='login.html'">
+</div>
+<script>
+  // 获取用户名并显示
+  const username = sessionStorage.getItem('username');
+  if (username) {
+    document.getElementById('welcome-message').textContent = `欢迎广告主： ${username}，来到系统！`;
+  }
+</script>
+</body>
+</html>
