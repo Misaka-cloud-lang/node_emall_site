@@ -18,4 +18,9 @@ public class AdvertisementAdminServiceImpl implements AdvertisementAdminService 
     public List<Advertisement> getAllAdvertisements() {
         return advertisementAdminMapper.findAll();
     }
+
+    @Override
+    public void deleteAdvertisement(String title) {
+        advertisementAdminMapper.deleteByTitle(title);
+    }
 }

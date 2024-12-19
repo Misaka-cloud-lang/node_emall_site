@@ -7,4 +7,8 @@
     <select id="findAll" resultType="org.example.advertisement_system.entity.Advertisement">
         SELECT * FROM advertisement
     </select>
+
+    <delete id="deleteByTitle">
+        DELETE FROM advertisement WHERE title = #{title}
+    </delete>
 </mapper>

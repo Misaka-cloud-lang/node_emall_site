@@ -3,22 +3,12 @@ package org.example.advertisement_system.entity;
 import java.time.LocalDateTime;
 
 public class Advertisement {
-    private Long id;
     private String title;
     private String content;
     private String tag;
     private String username;
     private LocalDateTime time;
     private String picture;
-
-    // Getter and Setter for id
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     // Getter and Setter for title
     public String getTitle() {

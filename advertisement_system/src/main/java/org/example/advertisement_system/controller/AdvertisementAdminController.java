@@ -4,10 +4,7 @@ import org.example.advertisement_system.entity.Advertisement;
 import org.example.advertisement_system.service.AdvertisementAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,4 +19,11 @@ public class AdvertisementAdminController {
     public List<Advertisement> getAdvertisements() {
         return advertisementService.getAllAdvertisements();
     }
+
+    @DeleteMapping("/by-title/{title}") // 新增删除广告的端点
+    public ResponseEntity<Void> deleteAdvertisement(@PathVariable String title) {
+        advertisementService.deleteAdvertisement(title);
+        return ResponseEntity.noContent().build();
+    }
+
 }

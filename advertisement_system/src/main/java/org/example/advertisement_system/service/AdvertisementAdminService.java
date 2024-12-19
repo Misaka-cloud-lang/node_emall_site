@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface AdvertisementAdminService {
     List<Advertisement> getAllAdvertisements();
+    void deleteAdvertisement(String title);
 }
 
