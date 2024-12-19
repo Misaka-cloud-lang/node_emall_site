@@ -18,6 +18,10 @@
             border-bottom: 1px solid #ccc;
             padding: 10px 0;
         }
+
+        .advertisement-details {
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
@@ -33,10 +37,20 @@
             data.forEach(advertisement => {
                 const itemElement = document.createElement('div');
                 itemElement.className = 'advertisement-item';
-                itemElement.innerHTML = `<strong>${advertisement.title}</strong> by ${advertisement.username}`;
+
+                itemElement.innerHTML = `
+                    <strong>Title:</strong> ${advertisement.title}<br>
+                    <strong>Content:</strong> ${advertisement.content}<br>
+                    <strong>Tag:</strong> ${advertisement.tag}<br>
+                    <strong>Username:</strong> ${advertisement.username}<br>
+                    <strong>Time:</strong> ${new Date(advertisement.time).toLocaleString()}<br>
+                    <strong>Picture:</strong> <img src="${advertisement.picture}" alt="Advertisement Picture" style="max-width: 100px;">
+                `;
+
                 listElement.appendChild(itemElement);
             });
         }).catch(error => console.error('Error fetching advertisements:', error));
-    }); </script>
+    });
+</script>
 </body>
 </html>
