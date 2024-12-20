@@ -18,4 +18,9 @@ public class AdvertisementServiceImpl implements AdvertisementService {
     public List<Advertisement> getAdvertisementsByUsername(String username) {
         return advertisementMapper.findByUsername(username);
     }
+
+    @Override
+    public void deleteAdvertisement(String title) {
+        advertisementMapper.deleteByTitle(title);
+    }
 }

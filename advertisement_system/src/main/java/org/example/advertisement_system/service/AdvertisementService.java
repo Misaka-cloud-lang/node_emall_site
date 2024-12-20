@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface AdvertisementService {
     List<Advertisement> getAdvertisementsByUsername(String name);
+    void deleteAdvertisement(String title);
 }

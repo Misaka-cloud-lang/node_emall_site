@@ -35,9 +35,9 @@
     }
 
     .return-button {
-      position: absolute; /* 设置绝对定位 */
-      top: 10px; /* 距离顶部的距离 */
-      right: 5px; /* 距离右侧的距离 */
+      position: absolute;
+      top: 10px;
+      right: 5px;
     }
 
     .admin-container button {
@@ -89,7 +89,6 @@
       to { opacity: 1; }
     }
 
-    /* 修改原有的广告样式类名为 admin-container 和 advertisement-item */
     .advertisement {
       border-bottom: 1px solid #ccc;
       padding: 10px 0;
@@ -135,6 +134,7 @@
     <div class="advertisement-item">
       <h2>
         <strong class="ad-title"></strong>
+        <a href="#" class="delete-link">删除</a>
       </h2>
       <div class="advertisement-details">
         <p><strong>内容:</strong> <span class="ad-content"></span></p>
@@ -169,11 +169,50 @@
 
                   advertisementsContainer.appendChild(adDiv);
                 });
+
+                // 绑定删除事件
+                document.querySelectorAll('.delete-link').forEach(link => {
+                  link.addEventListener('click', function(event) {
+                    event.preventDefault(); // 阻止默认行为
+
+                    // 弹出确认对话框
+                    const confirmed = confirm('确定要删除此广告吗？');
+
+                    if (confirmed) {
+                      // 用户确认删除，调用删除广告函数
+                      deleteAdvertisement(event, this);
+                    }
+                  });
+                });
               })
               .catch(error => console.error('Error fetching advertisements:', error));
     } else {
       alert('未登录，请先登录！');
       location.href = 'login.html';
+    }
+
+    // 删除广告的函数
+    function deleteAdvertisement(event, element) {
+      event.preventDefault(); // 再次阻止默认行为，以防万一
+
+      // 获取广告标题
+      const adItem = element.parentElement;
+      const adTitleElement = adItem.querySelector('.ad-title');
+      const title = adTitleElement.textContent.trim();
+
+      // 发送 DELETE 请求
+      fetch(`/api/operating/by-title/${encodeURIComponent(title)}`, {
+        method: 'DELETE'
+      })
+              .then(response => {
+                if (response.ok) {
+                  // 如果删除成功，则从页面上移除广告项
+                  window.location.reload();
+                } else {
+                  throw new Error('Failed to delete advertisement');
+                }
+              })
+              .catch(error => console.error('Error deleting advertisement:', error));
     }
   </script>
 </div>
