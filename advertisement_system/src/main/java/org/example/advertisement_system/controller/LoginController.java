@@ -1,7 +1,7 @@
 package org.example.advertisement_system.controller;
 
 import org.example.advertisement_system.entity.ErrorResponse;
-import org.example.advertisement_system.entity.User;
+import org.example.advertisement_system.entity.AdvHost;
 import org.example.advertisement_system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,9 +20,9 @@ public class LoginController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
-        User user = userService.authenticate(request.getUsername(), request.getPassword());
-        if (user != null) {
-            return new ResponseEntity<>(user, HttpStatus.OK);
+        AdvHost advHost = userService.authenticate(request.getUsername(), request.getPassword());
+        if (advHost != null) {
+            return new ResponseEntity<>(advHost, HttpStatus.OK);
         } else {
             ErrorResponse errorResponse = new ErrorResponse("用户名或密码错误");
             return new ResponseEntity<>(errorResponse, HttpStatus.UNAUTHORIZED);

@@ -1,6 +1,6 @@
 package org.example.advertisement_system.entity;
 
-public class User {
+public class AdvHost {
     private Long id;
     private String username;
     private String password;

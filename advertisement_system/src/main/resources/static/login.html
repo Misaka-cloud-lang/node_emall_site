@@ -93,8 +93,8 @@
             });
 
             if (response.ok) {
-                const user = await response.json();
-                sessionStorage.setItem('username', user.username); // 存储用户名
+                const advHost = await response.json();
+                sessionStorage.setItem('username', advHost.username); // 存储用户名
                 window.location.href = 'operating.html';
             } else {
                 const errorData = await response.json(); // 解析JSON响应

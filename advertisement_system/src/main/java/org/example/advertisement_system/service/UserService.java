@@ -1,7 +1,7 @@
 package org.example.advertisement_system.service;
 
-import org.example.advertisement_system.entity.User;
-import org.example.advertisement_system.mapper.UserMapper;
+import org.example.advertisement_system.entity.AdvHost;
+import org.example.advertisement_system.mapper.AdvHostMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,23 +9,23 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     @Autowired
-    private UserMapper userMapper;
+    private AdvHostMapper advHostMapper;
 
-    public User authenticate(String username, String password) {
-        User user = userMapper.findByUsername(username);
-        if (user != null && user.getPassword().equals(password)) {
-            return user;
+    public AdvHost authenticate(String username, String password) {
+        AdvHost advHost = advHostMapper.findByAdvHostName(username);
+        if (advHost != null && advHost.getPassword().equals(password)) {
+            return advHost;
         }
         return null;
     }
 
-    public boolean register(User user) {
+    public boolean register(AdvHost advHost) {
         // 检查用户名是否已存在
-        if (userMapper.findByUsername(user.getUsername()) != null) {
+        if (advHostMapper.findByAdvHostName(advHost.getUsername()) != null) {
             return false;
         }
         // 插入新用户
-        userMapper.insertUser(user);
+        advHostMapper.insertAdvHost(advHost);
         return true;
     }
 }

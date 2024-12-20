@@ -1,6 +1,6 @@
 package org.example.advertisement_system.controller;
 
-import org.example.advertisement_system.entity.User;
+import org.example.advertisement_system.entity.AdvHost;
 import org.example.advertisement_system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,8 +18,8 @@ public class RegisterController {
     private UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody User user) {
-        if (userService.register(user)) {
+    public ResponseEntity<String> register(@RequestBody AdvHost advHost) {
+        if (userService.register(advHost)) {
             return new ResponseEntity<>("注册成功", HttpStatus.OK);
         } else {
             return new ResponseEntity<>("用户名已经存在", HttpStatus.BAD_REQUEST);
