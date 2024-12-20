@@ -23,4 +23,10 @@ public class AdvertisementServiceImpl implements AdvertisementService {
     public void deleteAdvertisement(String title) {
         advertisementMapper.deleteByTitle(title);
     }
+
+    @Override
+    public void addAdvertisement(Advertisement advertisement) {
+        advertisementMapper.insert(advertisement);
+    }
+
 }

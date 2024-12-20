@@ -12,4 +12,6 @@ public interface AdvertisementMapper {
     List<Advertisement> findByUsername(@Param("username") String username);
 
     void deleteByTitle(@Param("title") String title);
+
+    void insert(Advertisement advertisement);
 }

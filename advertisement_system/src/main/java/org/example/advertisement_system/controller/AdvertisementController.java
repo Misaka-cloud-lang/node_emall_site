@@ -25,4 +25,10 @@ public class AdvertisementController {
         advertisementService.deleteAdvertisement(title);
         return ResponseEntity.noContent().build();
     }
+
+    @PostMapping("/advertisements")
+    public ResponseEntity<String> addAdvertisement(@RequestBody Advertisement advertisement) {
+        advertisementService.addAdvertisement(advertisement);
+        return ResponseEntity.ok("广告已成功添加");
+    }
 }
