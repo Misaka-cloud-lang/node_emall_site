@@ -1,0 +1,3 @@
+[submodule "advertisement_system"]
+	path = advertisement_system
+	url = https://github.com/Misaka-cloud-lang/node_adv_site.git
