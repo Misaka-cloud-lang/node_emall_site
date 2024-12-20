@@ -10,7 +10,7 @@ public class AdminLoginController {
 
     @PostMapping("/admin/login")
     public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest request) {
-        String ADMIN_PASSWORD = "1234";
+        final String ADMIN_PASSWORD = "1234";
         if (ADMIN_PASSWORD.equals(request.getPassword())) {
             return ResponseEntity.ok(new LoginResponse(true, "success"));
         } else {
