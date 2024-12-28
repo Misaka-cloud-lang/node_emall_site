@@ -7,7 +7,8 @@
 </template>
 
 <script>
-import { defineComponent, onMounted, ref } from 'vue';
+import { defineComponent, onMounted, ref} from 'vue';
+import { computed } from "vue";
 import axios from 'axios';
 import ProductItem from './ProductItem.vue';
 import { useStore } from 'vuex';

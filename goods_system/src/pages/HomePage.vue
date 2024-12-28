@@ -8,6 +8,7 @@
 
 <script>
 import { defineComponent, ref } from 'vue';
+import { computed } from "vue";
 import Header from '../components/Header.vue';
 import AdBanner from '../components/AdBanner.vue';
 import ProductList from '../components/ProductList.vue';
@@ -35,5 +36,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-/* 可根据需要添加样式 */
+
+
 </style>

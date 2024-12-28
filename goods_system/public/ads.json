@@ -3,12 +3,227 @@
     {
       "id": "1",
       "category": "电子产品",
-      "image": "/images/ads/electronics.jpg"
+      "image": "/assets/logo.jpg"
     },
     {
       "id": "2",
+      "category": "电子产品",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "3",
+      "category": "电子产品",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "4",
+      "category": "电子产品",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "5",
+      "category": "电子产品",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "6",
       "category": "家居用品",
-      "image": "/images/ads/home.jpg"
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "7",
+      "category": "家居用品",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "8",
+      "category": "家居用品",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "9",
+      "category": "家居用品",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "10",
+      "category": "家居用品",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "11",
+      "category": "服装",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "12",
+      "category": "服装",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "13",
+      "category": "服装",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "14",
+      "category": "服装",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "15",
+      "category": "服装",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "16",
+      "category": "食品",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "17",
+      "category": "食品",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "18",
+      "category": "食品",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "19",
+      "category": "食品",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "20",
+      "category": "食品",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "21",
+      "category": "图书",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "22",
+      "category": "图书",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "23",
+      "category": "图书",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "24",
+      "category": "图书",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "25",
+      "category": "图书",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "26",
+      "category": "美妆",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "27",
+      "category": "美妆",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "28",
+      "category": "美妆",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "29",
+      "category": "美妆",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "30",
+      "category": "美妆",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "31",
+      "category": "运动",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "32",
+      "category": "运动",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "33",
+      "category": "运动",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "34",
+      "category": "运动",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "35",
+      "category": "运动",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "36",
+      "category": "汽车",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "37",
+      "category": "汽车",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "38",
+      "category": "汽车",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "39",
+      "category": "汽车",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "40",
+      "category": "汽车",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "41",
+      "category": "旅行",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "42",
+      "category": "旅行",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "43",
+      "category": "旅行",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "44",
+      "category": "旅行",
+      "image": "/assets/logo.jpg"
+    },
+    {
+      "id": "45",
+      "category": "旅行",
+      "image": "/assets/logo.jpg"
     }
   ]
 }
