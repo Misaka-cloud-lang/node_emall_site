@@ -1,5 +1,5 @@
 {
-  "name": "goods_system",
+  "name": "vue3",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -9,8 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.7.9",
     "element-plus": "^2.9.1",
-    "vue": "^3.5.13"
+    "js-cookie": "^3.0.5",
+    "uuid": "^11.0.3",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",

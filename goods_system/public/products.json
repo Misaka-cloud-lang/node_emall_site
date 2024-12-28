@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "category": "电子产品",
+      "name": "手机",
+      "image": "/images/products/phone.jpg",
+      "price": 2999
+    },
+    {
+      "id": "2",
+      "category": "家居用品",
+      "name": "电饭煲",
+      "image": "/images/products/rice-cooker.jpg",
+      "price": 499
+    }
+
+  ]
+}

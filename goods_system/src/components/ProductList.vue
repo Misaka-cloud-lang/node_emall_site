@@ -1,52 +1,58 @@
 <template>
-  <el-row gutter="20" class="product-list">
-    <el-col :span="5" v-for="(product, index) in products" :key="index">
-      <product-card :product="product" @add-to-cart="handleAddToCart" @buy-now="handleBuyNow" />
+  <el-row :gutter="20">
+    <el-col :span="6" v-for="product in filteredProducts" :key="product.id">
+      <ProductItem :product="product" />
     </el-col>
   </el-row>
 </template>
 
 <script>
-import ProductCard from './ProductCard.vue'
+import { defineComponent, onMounted, ref } from 'vue';
+import axios from 'axios';
+import ProductItem from './ProductItem.vue';
+import { useStore } from 'vuex';
 
-export default {
+export default defineComponent({
+  name: 'ProductList',
   components: {
-    ProductCard
+    ProductItem
   },
-  data() {
+  props: {
+    selectedCategory: String
+  },
+  setup(props) {
+    const products = ref([]);
+    const store = useStore();
+
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('/products.json');
+        products.value = response.data.products;
+      } catch (error) {
+        console.error('获取商品数据失败:', error);
+      }
+    };
+
+    onMounted(() => {
+      fetchProducts();
+    });
+
+    const filteredProducts = computed(() => {
+      if (props.selectedCategory === 'all' || !props.selectedCategory) {
+        return products.value;
+      }
+      return products.value.filter(product => product.category === props.selectedCategory);
+    });
+
     return {
-      products: [
-        { name: '手机', price: '￥1999', image: 'product1.jpg' },
-        { name: '耳机', price: '￥399', image: 'product2.jpg' },
-        { name: '电视', price: '￥4999', image: 'product3.jpg' },
-        { name: '洗衣机', price: '￥2000', image: 'product4.jpg' },
-        { name: '冰箱', price: '￥2500', image: 'product5.jpg' },
-        { name: '沙发', price: '￥1500', image: 'product6.jpg' },
-        { name: '衣柜', price: '￥1000', image: 'product7.jpg' },
-        { name: '床', price: '￥1200', image: 'product8.jpg' },
-        { name: '书桌', price: '￥800', image: 'product9.jpg' },
-        { name: '椅子', price: '￥500', image: 'product10.jpg' },
-        { name: 'T恤', price: '￥99', image: 'product11.jpg' },
-        { name: '牛仔裤', price: '￥199', image: 'product12.jpg' },
-        { name: '运动鞋', price: '￥499', image: 'product13.jpg' },
-        { name: '香水', price: '￥299', image: 'product14.jpg' },
-        { name: '口红', price: '￥199', image: 'product15.jpg' }
-      ]
-    }
-  },
-  methods: {
-    handleAddToCart(product) {
-      console.log('Added to cart:', product)
-    },
-    handleBuyNow(product) {
-      console.log('Buying now:', product)
-    }
+      filteredProducts
+    };
   }
-}
+});
 </script>
 
 <style scoped>
-.product-list {
+.el-row {
   margin-top: 20px;
 }
 </style>

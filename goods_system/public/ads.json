@@ -1,0 +1,14 @@
+{
+  "ads": [
+    {
+      "id": "1",
+      "category": "电子产品",
+      "image": "/images/ads/electronics.jpg"
+    },
+    {
+      "id": "2",
+      "category": "家居用品",
+      "image": "/images/ads/home.jpg"
+    }
+  ]
+}
