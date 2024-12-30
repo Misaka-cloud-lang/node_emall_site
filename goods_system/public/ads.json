@@ -3,7 +3,7 @@
     {
       "id": "1",
       "category": "电子产品",
-      "image": "/assets/logo.jpg"
+      "image": "@/assets/logo.jpg"
     },
     {
       "id": "2",

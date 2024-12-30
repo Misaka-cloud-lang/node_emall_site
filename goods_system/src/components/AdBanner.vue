@@ -20,7 +20,8 @@ export default defineComponent({
       // 并且通过广告 ID 获取对应广告图片
       // 实际项目中可能需要从后端获取广告数据
       // 这里简单示例
-      return `/ads/${store.state.currentAdId}.jpg` || '/ads/default.jpg';
+      //return `/ads/${store.state.currentAdId}.jpg` || '/ads/default.jpg';
+      return '/ads/default.jpg';
     });
 
     // 默认广告
