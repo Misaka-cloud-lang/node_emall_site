@@ -5,6 +5,7 @@ export default createStore({
     state: {
         userId: '',
         currentAdId: null,
+        currentAdUrl: null,
         cart: []
     },
     mutations: {
@@ -13,6 +14,9 @@ export default createStore({
         },
         SET_CURRENT_AD_ID(state, id) {
             state.currentAdId = id;
+        },
+        SET_CURRENT_AD_URL(state, url) {
+            state.currentAdUrl = url; // 设置当前广告 URL
         },
         ADD_TO_CART(state, product) {
             const existing = state.cart.find(item => item.id === product.id);
@@ -32,6 +36,33 @@ export default createStore({
                 const response = await axios.post('/api/behavior', payload);
                 const newAdId = response.data.adId;
                 commit('SET_CURRENT_AD_ID', newAdId);
+            } catch (error) {
+                console.error('POST 请求失败:', error);
+            }
+        },
+        async sendGetRequest({ commit, state }, payload){
+            try {
+                const params = new URLSearchParams({
+                    userId: payload.userId,
+                    tag: payload.category,
+                    action: payload.behavior
+                });
+
+                // 使用 GET 请求获取广告数据
+                const response = await axios.get(`http://127.0.0.1:4523/m1/5702531-5383660-default/ad/shop?${params.toString()}`);
+
+                // 假设返回的 JSON 格式为：
+                // {
+                //   "adId": "1",
+                //   "adUrl": "https://ooo.0x0.ooo/2024/12/31/OEJ29a.jpg"
+                // }
+                const adData = response.data;
+                console.log('GET 请求成功，响应数据:', response.data);
+                commit('SET_CURRENT_AD_ID', adData.adId);
+                console.log('当前 state 中的 currentAdId:', state.currentAdId);
+                commit('SET_CURRENT_AD_URL', adData.adUrl);
+                console.log('当前 state 中的 currentAdUrl:', state.currentAdUrl); // 设置广告 URL
+
             } catch (error) {
                 console.error('POST 请求失败:', error);
             }

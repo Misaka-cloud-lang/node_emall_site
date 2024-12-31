@@ -1,10 +1,10 @@
 <template>
   <el-card :body-style="{ padding: '10px' }">
     <img :src="product.image" class="product-image" @click="handleImageClick" />
-    <img :src='/ads/default.jpg' class="product-image" @click="handleImageClick" />
     <div class="product-info">
       <span class="price">¥{{ product.price }}</span>
       <div class="buttons">
+        <span class="product-name">{{ product.name }}</span> <!-- 商品名 -->
         <el-button type="primary" size="small" @click="addToCart">加购</el-button>
         <el-button type="success" size="small" @click="buyNow">购买</el-button>
       </div>
@@ -30,7 +30,8 @@ export default defineComponent({
         category: props.product.category,
         behavior: 1
       };
-      store.dispatch('sendPostRequest', payload);
+      //store.dispatch('sendPostRequest', payload);
+      store.dispatch('sendGetRequest', payload);
     };
 
     const addToCart = () => {
@@ -40,7 +41,8 @@ export default defineComponent({
         category: props.product.category,
         behavior: 2
       };
-      store.dispatch('sendPostRequest', payload);
+      //store.dispatch('sendPostRequest', payload);
+      store.dispatch('sendGetRequest', payload);
     };
 
     const buyNow = () => {
@@ -49,7 +51,8 @@ export default defineComponent({
         category: props.product.category,
         behavior: 3
       };
-      store.dispatch('sendPostRequest', payload);
+      //store.dispatch('sendPostRequest', payload);
+      store.dispatch('sendGetRequest', payload);
       // 这里可以添加购买逻辑，例如跳转到支付页面或弹出支付窗口
       this.$message.success('购买成功！');
     };

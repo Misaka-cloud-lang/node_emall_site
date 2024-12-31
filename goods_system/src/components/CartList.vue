@@ -34,6 +34,7 @@ export default defineComponent({
         return;
       }
       store.dispatch('pay');
+      store.commit('CLEAR_CART');
       this.$message.success('支付成功！');
     };
 

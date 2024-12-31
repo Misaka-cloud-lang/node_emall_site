@@ -4,315 +4,315 @@
       "id": "1",
       "category": "电子产品",
       "name": "手机",
-      "image": "/assets/logo.jpg",
+      "image": "/products/1.jpg",
       "price": 2999
     },
     {
       "id": "2",
       "category": "电子产品",
       "name": "笔记本电脑",
-      "image": "/assets/logo.jpg",
+      "image": "/products/2.jpg",
       "price": 7999
     },
     {
       "id": "3",
       "category": "电子产品",
       "name": "平板电脑",
-      "image": "/assets/logo.jpg",
+      "image": "/products/3.jpg",
       "price": 3999
     },
     {
       "id": "4",
       "category": "电子产品",
       "name": "智能手表",
-      "image": "/assets/logo.jpg",
+      "image": "/products/4.jpg",
       "price": 1299
     },
     {
       "id": "5",
       "category": "电子产品",
       "name": "蓝牙耳机",
-      "image": "/assets/logo.jpg",
+      "image": "/products/5.jpg",
       "price": 499
     },
     {
       "id": "6",
       "category": "家居用品",
       "name": "电饭煲",
-      "image": "/assets/logo.jpg",
+      "image": "/products/6.jpg",
       "price": 499
     },
     {
       "id": "7",
       "category": "家居用品",
       "name": "空气净化器",
-      "image": "/assets/logo.jpg",
+      "image": "/products/7.jpg",
       "price": 1999
     },
     {
       "id": "8",
       "category": "家居用品",
       "name": "智能灯泡",
-      "image": "/assets/logo.jpg",
+      "image": "/products/8.jpg",
       "price": 299
     },
     {
       "id": "9",
       "category": "家居用品",
       "name": "咖啡机",
-      "image": "/assets/logo.jpg",
+      "image": "/products/9.jpg",
       "price": 899
     },
     {
       "id": "10",
       "category": "家居用品",
       "name": "榨汁机",
-      "image": "/assets/logo.jpg",
+      "image": "/products/10.jpg",
       "price": 599
     },
     {
       "id": "11",
       "category": "服装",
       "name": "T恤",
-      "image": "/assets/logo.jpg",
+      "image": "/products/11.jpg",
       "price": 199
     },
     {
       "id": "12",
       "category": "服装",
       "name": "牛仔裤",
-      "image": "/assets/logo.jpg",
+      "image": "/products/12.jpg",
       "price": 399
     },
     {
       "id": "13",
       "category": "服装",
       "name": "夹克",
-      "image": "/assets/logo.jpg",
+      "image": "/products/13.jpg",
       "price": 599
     },
     {
       "id": "14",
       "category": "服装",
       "name": "连衣裙",
-      "image": "/assets/logo.jpg",
+      "image": "/products/14.jpg",
       "price": 499
     },
     {
       "id": "15",
       "category": "服装",
       "name": "运动衫",
-      "image": "/assets/logo.jpg",
+      "image": "/products/15.jpg",
       "price": 299
     },
     {
       "id": "16",
       "category": "食品",
       "name": "巧克力",
-      "image": "/assets/logo.jpg",
+      "image": "/products/16.jpg",
       "price": 99
     },
     {
       "id": "17",
       "category": "食品",
       "name": "薯片",
-      "image": "/assets/logo.jpg",
+      "image": "/products/17.jpg",
       "price": 49
     },
     {
       "id": "18",
       "category": "食品",
       "name": "坚果",
-      "image": "/assets/logo.jpg",
+      "image": "/products/18.jpg",
       "price": 199
     },
     {
       "id": "19",
       "category": "食品",
       "name": "饼干",
-      "image": "/assets/logo.jpg",
+      "image": "/products/19.jpg",
       "price": 59
     },
     {
       "id": "20",
       "category": "食品",
       "name": "果汁",
-      "image": "/assets/logo.jpg",
+      "image": "/products/20.jpg",
       "price": 129
     },
     {
       "id": "21",
       "category": "图书",
       "name": "小说",
-      "image": "/assets/logo.jpg",
+      "image": "/products/21.jpg",
       "price": 150
     },
     {
       "id": "22",
       "category": "图书",
       "name": "自传",
-      "image": "/assets/logo.jpg",
+      "image": "/products/22.jpg",
       "price": 180
     },
     {
       "id": "23",
       "category": "图书",
       "name": "科技书",
-      "image": "/assets/logo.jpg",
+      "image": "/products/23.jpg",
       "price": 220
     },
     {
       "id": "24",
       "category": "图书",
       "name": "漫画",
-      "image": "/assets/logo.jpg",
+      "image": "/products/24.jpg",
       "price": 100
     },
     {
       "id": "25",
       "category": "图书",
       "name": "诗集",
-      "image": "/assets/logo.jpg",
+      "image": "/products/25.jpg",
       "price": 130
     },
     {
       "id": "26",
       "category": "美妆",
       "name": "口红",
-      "image": "/assets/logo.jpg",
+      "image": "/products/26.jpg",
       "price": 299
     },
     {
       "id": "27",
       "category": "美妆",
       "name": "睫毛膏",
-      "image": "/assets/logo.jpg",
+      "image": "/products/27.jpg",
       "price": 199
     },
     {
       "id": "28",
       "category": "美妆",
       "name": "面膜",
-      "image": "/assets/logo.jpg",
+      "image": "/products/28.jpg",
       "price": 149
     },
     {
       "id": "29",
       "category": "美妆",
       "name": "香水",
-      "image": "/assets/logo.jpg",
+      "image": "/products/29.jpg",
       "price": 499
     },
     {
       "id": "30",
       "category": "美妆",
       "name": "粉底液",
-      "image": "/assets/logo.jpg",
+      "image": "/products/30.jpg",
       "price": 399
     },
     {
       "id": "31",
       "category": "运动",
       "name": "运动鞋",
-      "image": "/assets/logo.jpg",
+      "image": "/products/31.jpg",
       "price": 899
     },
     {
       "id": "32",
       "category": "运动",
       "name": "运动裤",
-      "image": "/assets/logo.jpg",
+      "image": "/products/32.jpg",
       "price": 299
     },
     {
       "id": "33",
       "category": "运动",
       "name": "运动手环",
-      "image": "/assets/logo.jpg",
+      "image": "/products/33.jpg",
       "price": 399
     },
     {
       "id": "34",
       "category": "运动",
       "name": "瑜伽垫",
-      "image": "/assets/logo.jpg",
+      "image": "/products/34.jpg",
       "price": 199
     },
     {
       "id": "35",
       "category": "运动",
       "name": "健身器材",
-      "image": "/assets/logo.jpg",
+      "image": "/products/35.jpg",
       "price": 1299
     },
     {
       "id": "36",
       "category": "汽车",
       "name": "车载充电器",
-      "image": "/assets/logo.jpg",
+      "image": "/products/36.jpg",
       "price": 129
     },
     {
       "id": "37",
       "category": "汽车",
       "name": "汽车香水",
-      "image": "/assets/logo.jpg",
+      "image": "/products/37.jpg",
       "price": 89
     },
     {
       "id": "38",
       "category": "汽车",
       "name": "行车记录仪",
-      "image": "/assets/logo.jpg",
+      "image": "/products/38.jpg",
       "price": 499
     },
     {
       "id": "39",
       "category": "汽车",
       "name": "车载导航",
-      "image": "/assets/logo.jpg",
+      "image": "/products/39.jpg",
       "price": 799
     },
     {
       "id": "40",
       "category": "汽车",
       "name": "汽车座垫",
-      "image": "/assets/logo.jpg",
+      "image": "/products/40.jpg",
       "price": 299
     },
     {
       "id": "41",
       "category": "旅行",
       "name": "旅行包",
-      "image": "/assets/logo.jpg",
+      "image": "/products/41.jpg",
       "price": 599
     },
     {
       "id": "42",
       "category": "旅行",
       "name": "旅行枕",
-      "image": "/assets/logo.jpg",
+      "image": "/products/42.jpg",
       "price": 199
     },
     {
       "id": "43",
       "category": "旅行",
       "name": "旅行箱",
-      "image": "/assets/logo.jpg",
+      "image": "/products/43.jpg",
       "price": 999
     },
     {
       "id": "44",
       "category": "旅行",
       "name": "便携洗漱包",
-      "image": "/assets/logo.jpg",
+      "image": "/products/44.jpg",
       "price": 149
     },
     {
       "id": "45",
       "category": "旅行",
       "name": "旅行转换插头",
-      "image": "/assets/logo.jpg",
+      "image": "/products/45.jpg",
       "price": 89
     }
   ]
