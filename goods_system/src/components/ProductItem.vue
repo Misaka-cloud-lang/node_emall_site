@@ -1,6 +1,7 @@
 <template>
   <el-card :body-style="{ padding: '10px' }">
     <img :src="product.image" class="product-image" @click="handleImageClick" />
+    <img :src='/ads/default.jpg' class="product-image" @click="handleImageClick" />
     <div class="product-info">
       <span class="price">¥{{ product.price }}</span>
       <div class="buttons">
