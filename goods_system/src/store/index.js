@@ -6,6 +6,8 @@ export default createStore({
         userId: '',
         currentAdId: null,
         currentAdUrl: null,
+        currentAdUrl_1:null,
+        currentAdUrl_2:null,
         cart: []
     },
     mutations: {
@@ -17,6 +19,12 @@ export default createStore({
         },
         SET_CURRENT_AD_URL(state, url) {
             state.currentAdUrl = url; // 设置当前广告 URL
+        },
+        SET_CURRENT_AD_URL_1(state, url) {
+            state.currentAdUrl_1 = url; // 设置当前广告 URL
+        },
+        SET_CURRENT_AD_URL_2(state, url) {
+            state.currentAdUrl_2 = url; // 设置当前广告 URL
         },
         ADD_TO_CART(state, product) {
             const existing = state.cart.find(item => item.id === product.id);
@@ -40,6 +48,46 @@ export default createStore({
                 console.error('POST 请求失败:', error);
             }
         },
+        //发送数据,并更新广告
+        async sendPost({ commit, state }, payload){
+            try {
+                const params_1 = new URLSearchParams({
+                    userId: payload.userId,
+                });
+                const params_2 = new URLSearchParams({
+                    userId: payload.userId,
+                    tag: payload.category,
+                    action: payload.behavior
+
+                });
+
+                //发送用户行为
+                const response_2 = await axios.post(`http://112.124.63.147:8080/receive/emall?${params_2.toString()}`);
+                console.log('Response 2:', response_2); // Log the response of the first request
+                //获取广告
+                const response_1 = await axios.post(`http://112.124.63.147:8080/api/advertisement/place/store?${params_1.toString()}`);
+                console.log('Response 1:', response_1); // Log the response of the first request
+
+                const adData = response_1.data;
+                const firstAdData = adData[0];
+                firstAdData.picture = `http://112.124.63.147:8080/${firstAdData.picture}`;
+                commit('SET_CURRENT_AD_URL_1', firstAdData.picture);
+
+                // 处理第二个元素的图片路径，添加前缀并提交到SET_CURRENT_AD_URL_2
+                const secondAdData = adData[1];
+                secondAdData.picture = `http://112.124.63.147:8080/${secondAdData.picture}`;
+
+
+                commit('SET_CURRENT_AD_URL_2', secondAdData.picture);
+                console.log('currentAdUrl_1:', state.currentAdUrl_1);
+                console.log('currentAdUrl_2:', state.currentAdUrl_2);
+                //commit('SET_CURRENT_AD_URL', adData.adUrl);
+                //commit('SET_CURRENT_AD_ID', newAdId);
+            } catch (error) {
+                console.error('POST 请求失败:', error);
+            }
+        },
+
         async sendGetRequest({ commit, state }, payload){
             try {
                 const params = new URLSearchParams({
@@ -57,11 +105,8 @@ export default createStore({
                 //   "adUrl": "https://ooo.0x0.ooo/2024/12/31/OEJ29a.jpg"
                 // }
                 const adData = response.data;
-                console.log('GET 请求成功，响应数据:', response.data);
                 commit('SET_CURRENT_AD_ID', adData.adId);
-                console.log('当前 state 中的 currentAdId:', state.currentAdId);
                 commit('SET_CURRENT_AD_URL', adData.adUrl);
-                console.log('当前 state 中的 currentAdUrl:', state.currentAdUrl); // 设置广告 URL
 
             } catch (error) {
                 console.error('POST 请求失败:', error);

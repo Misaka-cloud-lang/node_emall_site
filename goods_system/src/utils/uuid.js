@@ -3,9 +3,10 @@ import Cookies from 'js-cookie';
 
 export function getOrCreateUUID() {
     let uuid = Cookies.get('user_uuid');
-    if (!uuid) {
-        uuid = uuidv4();
-        Cookies.set('user_uuid', uuid, { expires: 365 });
-    }
+    uuid = Math.floor(Math.random() * 20) + 1;
+    // if (!uuid) {
+    //     uuid = Math.floor(Math.random() * 20) + 1;
+    //     Cookies.set('user_uuid', uuid, { expires: 365 });
+    // }
     return uuid;
 }

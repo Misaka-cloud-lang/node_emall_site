@@ -31,7 +31,7 @@ export default defineComponent({
         behavior: 1
       };
       //store.dispatch('sendPostRequest', payload);
-      store.dispatch('sendGetRequest', payload);
+      store.dispatch('sendPost', payload);
     };
 
     const addToCart = () => {
@@ -42,7 +42,7 @@ export default defineComponent({
         behavior: 2
       };
       //store.dispatch('sendPostRequest', payload);
-      store.dispatch('sendGetRequest', payload);
+      store.dispatch('sendPost', payload);
     };
 
     const buyNow = () => {
@@ -52,7 +52,7 @@ export default defineComponent({
         behavior: 3
       };
       //store.dispatch('sendPostRequest', payload);
-      store.dispatch('sendGetRequest', payload);
+      store.dispatch('sendPost', payload);
       // 这里可以添加购买逻辑，例如跳转到支付页面或弹出支付窗口
       this.$message.success('购买成功！');
     };
