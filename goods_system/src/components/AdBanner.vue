@@ -31,9 +31,9 @@ export default defineComponent({
       return url ? url.replace(/{{|}}|'/g, '') : '/ads/default.jpg';
     });
     // 默认广告
-    if (!store.state.currentAdId) {
-      store.commit('SET_CURRENT_AD_ID', 1); // 假设默认广告 ID 为 1
-    }
+    // if (!store.state.currentAdId) {
+    //   store.commit('SET_CURRENT_AD_ID', 1); // 假设默认广告 ID 为 1
+    // }
 
     return {
       currentAdUrl_1,

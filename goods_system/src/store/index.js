@@ -39,15 +39,15 @@ export default createStore({
         }
     },
     actions: {
-        async sendPostRequest({ commit, state }, payload) {
-            try {
-                const response = await axios.post('/api/behavior', payload);
-                const newAdId = response.data.adId;
-                commit('SET_CURRENT_AD_ID', newAdId);
-            } catch (error) {
-                console.error('POST 请求失败:', error);
-            }
-        },
+        // async sendPostRequest({ commit, state }, payload) {
+        //     try {
+        //         const response = await axios.post('/api/behavior', payload);
+        //         const newAdId = response.data.adId;
+        //         commit('SET_CURRENT_AD_ID', newAdId);
+        //     } catch (error) {
+        //         console.error('POST 请求失败:', error);
+        //     }
+        // },
         //发送数据,并更新广告
         async sendPost({ commit, state }, payload){
             try {
@@ -60,7 +60,11 @@ export default createStore({
                     action: payload.behavior
 
                 });
-
+                console.log("params_2");
+                console.log(params_2);
+                console.log("payload");
+                console.log(payload);
+                console.log("开始发送请求");
                 //发送用户行为
                 const response_2 = await axios.post(`http://112.124.63.147:8080/receive/emall?${params_2.toString()}`);
                 console.log('Response 2:', response_2); // Log the response of the first request
@@ -87,31 +91,47 @@ export default createStore({
                 console.error('POST 请求失败:', error);
             }
         },
-
-        async sendGetRequest({ commit, state }, payload){
+        async sendPost_cart({ commit, state }, payload){
             try {
-                const params = new URLSearchParams({
+
+                const params_2 = new URLSearchParams({
                     userId: payload.userId,
-                    tag: payload.category,
-                    action: payload.behavior
+                    tag: payload.tag,
+                    action: payload.action
                 });
-
-                // 使用 GET 请求获取广告数据
-                const response = await axios.get(`http://127.0.0.1:4523/m1/5702531-5383660-default/ad/shop?${params.toString()}`);
-
-                // 假设返回的 JSON 格式为：
-                // {
-                //   "adId": "1",
-                //   "adUrl": "https://ooo.0x0.ooo/2024/12/31/OEJ29a.jpg"
-                // }
-                const adData = response.data;
-                commit('SET_CURRENT_AD_ID', adData.adId);
-                commit('SET_CURRENT_AD_URL', adData.adUrl);
+                //发送用户行为
+                const response_2 = await axios.post(`http://112.124.63.147:8080/receive/emall?${params_2.toString()}`);
+                console.log('Response 2:', response_2); // Log the response of the first request
 
             } catch (error) {
                 console.error('POST 请求失败:', error);
             }
         },
+
+        // async sendGetRequest({ commit, state }, payload){
+        //     try {
+        //         const params = new URLSearchParams({
+        //             userId: payload.userId,
+        //             tag: payload.category,
+        //             action: payload.behavior
+        //         });
+        //
+        //         // 使用 GET 请求获取广告数据
+        //         const response = await axios.get(`http://127.0.0.1:4523/m1/5702531-5383660-default/ad/shop?${params.toString()}`);
+        //
+        //         // 假设返回的 JSON 格式为：
+        //         // {
+        //         //   "adId": "1",
+        //         //   "adUrl": "https://ooo.0x0.ooo/2024/12/31/OEJ29a.jpg"
+        //         // }
+        //         const adData = response.data;
+        //         commit('SET_CURRENT_AD_ID', adData.adId);
+        //         commit('SET_CURRENT_AD_URL', adData.adUrl);
+        //
+        //     } catch (error) {
+        //         console.error('POST 请求失败:', error);
+        //     }
+        // },
         async pay({ commit, state }) {
             const promises = state.cart.map(item => {
                 const payload = {
@@ -119,8 +139,10 @@ export default createStore({
                     category: item.category,
                     behavior: 3
                 };
+                console.log(payload);
                 return axios.post('/api/behavior', payload);
             });
+            console.log(promises);
 
             try {
                 const responses = await Promise.all(promises);

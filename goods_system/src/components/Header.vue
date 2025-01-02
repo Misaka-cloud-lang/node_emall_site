@@ -5,7 +5,9 @@
     </div>
     <el-menu mode="horizontal" @select="handleSelect" :default-active="activeCategory">
       <el-menu-item index="all">全部</el-menu-item>
-      <el-menu-item v-for="category in categories" :key="category" :index="category">{{ category }}</el-menu-item>
+      <el-menu-item v-for="category in categories" :key="category.en" :index="category.en">
+        {{ category.cn }}
+      </el-menu-item>
     </el-menu>
     <div class="cart-button">
       <el-button type="primary" @click="goToCart">
@@ -15,6 +17,7 @@
     </div>
   </el-header>
 </template>
+
 
 <script>
 import { defineComponent } from 'vue';
@@ -28,7 +31,17 @@ export default defineComponent({
   },
   data() {
     return {
-      categories: ["电子产品", "家居用品", "服装", "食品", "图书", "美妆", "运动", "汽车","旅行"],
+      categories: [
+        { en: "electronicProducts", cn: "电子产品" },
+        { en: "homeGoods", cn: "家居用品" },
+        { en: "clothing", cn: "服装" },
+        { en: "foodProducts", cn: "食品" },
+        { en: "books", cn: "图书" },
+        { en: "beautyProducts", cn: "美妆" },
+        { en: "sportsEquipment", cn: "运动" },
+        { en: "carAccessories", cn: "汽车" },
+        { en: "travelSupplies", cn: "旅行" }
+      ],
       activeCategory: 'all'
     };
   },
